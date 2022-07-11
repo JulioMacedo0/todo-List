@@ -8,7 +8,12 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   html, body {
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f0efe9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   html {
     font-size: 62.5%;

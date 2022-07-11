@@ -4,7 +4,8 @@ export default {
     secondary: '#f2f2f3',
     tertiary: '#e5e4e6',
     white: '#ffffff',
-    evidence: '#95959d',
+    evidence: '#5b5e6d',
+    realized: '#dcdde3',
   },
   font: {
     sizes: {

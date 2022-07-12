@@ -7,4 +7,4 @@ export default {
   component: Button,
 } as Meta;
 
-export const button: Story = () => <Button />;
+//export const button: Story = () => <Button />;

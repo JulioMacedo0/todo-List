@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../Button';
+import { Input } from '../Input';
 import { Task } from '../Task';
 import * as S from './styles';
 
@@ -40,6 +41,8 @@ export const CardTask = () => {
     },
     { title: 'Estudar React', done: false },
   ]);
+  const [isVisible, setIsVisible] = useState(false);
+  const [title, setTitle] = useState('');
 
   function handleStatus(id: number) {
     const newTasks = tasks.map((task, index) => {
@@ -56,11 +59,13 @@ export const CardTask = () => {
     setTasks(newTasks);
   }
 
-  // interface tasks {}
-
-  // function addTask(taks) {
-  //   return tasks;
-  // }
+  function handleInput() {
+    setIsVisible(!isVisible);
+  }
+  function addTask(title: string) {
+    const newTasks = [...tasks, { title: title, done: false }];
+    setTasks(newTasks);
+  }
   return (
     <S.Card>
       <S.Container>
@@ -76,6 +81,9 @@ export const CardTask = () => {
             <p className="week">{weeks[week]}</p>
           </div>
         </header>
+        {isVisible ? (
+          <Input setTitle={setTitle} addTask={addTask} title={title} />
+        ) : null}
         <main>
           {tasks.map((task, index) => (
             <Task
@@ -88,7 +96,7 @@ export const CardTask = () => {
           ))}
         </main>
       </S.Container>
-      {<Button /*  addTask={() => addTask(tasks)}*/ />}
+      {<Button toggleInput={() => handleInput()} />}
     </S.Card>
   );
 };

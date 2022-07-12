@@ -5,7 +5,7 @@ export const Card = styled.div`
   height: 450px;
   position: relative;
 
-  button {
+  > button {
     position: absolute;
     left: 112.5px;
     bottom: -37.5px;

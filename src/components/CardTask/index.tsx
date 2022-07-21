@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import { Input } from '../Input';
 import { Task } from '../Task';
 import * as S from './styles';
-
+import { v4 as uuid } from 'uuid';
 export const CardTask = () => {
   const moths = [
     'JAN',
@@ -89,7 +89,7 @@ export const CardTask = () => {
             <Task
               task={task.title}
               isOk={task.done}
-              key={task.title}
+              key={uuid()}
               onChangeStatus={() => handleStatus(index)}
               deleteTask={() => deleteTask(index)}
             />

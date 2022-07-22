@@ -27,6 +27,10 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+  .toastBody {
+
+  font-size: 1.6rem ;
+}
 
 `;
 

@@ -3,6 +3,7 @@ import { Button } from '../Button';
 import { Input } from '../Input';
 import { Task } from '../Task';
 import * as S from './styles';
+import { toast } from 'react-toastify';
 
 export const CardTask = () => {
   const moths = [
@@ -63,8 +64,16 @@ export const CardTask = () => {
     setIsVisible(!isVisible);
   }
   function addTask(title: string) {
-    const newTasks = [...tasks, { title: title, done: false }];
-    setTasks(newTasks);
+    if (title.trim() != '') {
+      const newTasks = [...tasks, { title: title, done: false }];
+      setTasks(newTasks);
+    } else {
+      toast.error('Task is empyt', {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2400,
+      });
+      toast.clearWaitingQueue();
+    }
   }
   return (
     <S.Card>

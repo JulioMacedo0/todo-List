@@ -10,7 +10,7 @@ export const Input = ({ setTitle, addTask, title, isVisible }: inputProps) => {
     <S.Container isVisible={isVisible}>
       <S.Input onChange={(e) => setTitle(e.target.value)} />
       <S.Button type="button" onClick={() => addTask(title)}>
-        Adicionar
+        Add task
       </S.Button>
     </S.Container>
   );

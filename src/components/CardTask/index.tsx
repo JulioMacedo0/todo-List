@@ -61,7 +61,7 @@ export const CardTask = () => {
   }
 
   function handleInput() {
-    setIsVisible(!isVisible);
+    setIsVisible(true);
   }
   function addTask(title: string) {
     if (title.trim() != '') {
@@ -91,12 +91,6 @@ export const CardTask = () => {
           </div>
         </header>
 
-        <Input
-          setTitle={setTitle}
-          addTask={addTask}
-          title={title}
-          isVisible={isVisible}
-        />
         <main>
           {tasks.map((task, index) => (
             <Task
@@ -107,6 +101,13 @@ export const CardTask = () => {
               deleteTask={() => deleteTask(index)}
             />
           ))}
+          <Input
+            setTitle={setTitle}
+            setIsVisible={setIsVisible}
+            addTask={addTask}
+            title={title}
+            isVisible={isVisible}
+          />
         </main>
       </S.Container>
       {<Button toggleInput={() => handleInput()} />}

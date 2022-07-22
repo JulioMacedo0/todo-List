@@ -1,10 +1,14 @@
 import styled, { css } from 'styled-components';
-
-export const Container = styled.form`
+interface formProps {
+  isVisible: boolean;
+}
+export const Container = styled.form<formProps>`
   display: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  transition: opacity 0.3s;
   margin-bottom: 15px;
 `;
 

@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import { Input } from '../Input';
 import { Task } from '../Task';
 import * as S from './styles';
-import { v4 as uuid } from 'uuid';
+
 export const CardTask = () => {
   const moths = [
     'JAN',
@@ -81,15 +81,19 @@ export const CardTask = () => {
             <p className="week">{weeks[week]}</p>
           </div>
         </header>
-        {isVisible ? (
-          <Input setTitle={setTitle} addTask={addTask} title={title} />
-        ) : null}
+
+        <Input
+          setTitle={setTitle}
+          addTask={addTask}
+          title={title}
+          isVisible={isVisible}
+        />
         <main>
           {tasks.map((task, index) => (
             <Task
               task={task.title}
               isOk={task.done}
-              key={uuid()}
+              key={index}
               onChangeStatus={() => handleStatus(index)}
               deleteTask={() => deleteTask(index)}
             />

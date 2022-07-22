@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   html, body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     height: 100vh;
     width: 100vw;
     background-color: #f0efe9;

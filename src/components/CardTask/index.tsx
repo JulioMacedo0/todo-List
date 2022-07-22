@@ -37,10 +37,10 @@ export const CardTask = () => {
 
   const [tasks, setTasks] = useState([
     {
-      title: 'Estudar JavaScript',
+      title: 'Estudy JavaScript',
       done: false,
     },
-    { title: 'Estudar React', done: false },
+    { title: 'Estudy React', done: false },
   ]);
   const [isVisible, setIsVisible] = useState(false);
   const [title, setTitle] = useState('');

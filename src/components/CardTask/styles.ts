@@ -10,7 +10,13 @@ export const Card = styled.div`
     left: 112.5px;
     bottom: -37.5px;
   }
-
+  main {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    max-height: 31rem;
+    overflow-y: scroll;
+  }
   header {
     display: flex;
     align-items: center;
